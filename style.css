@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e1e2f, #2b2b40);
+  padding: 16px;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 380px;
+  background: #14141f;
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+}
+
+.modes {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.mode-btn {
+  flex: 1;
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: 1px solid #3a3a52;
+  background: #1c1c2b;
+  color: #8888a8;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mode-btn.active {
+  background: #5c6bff;
+  color: #fff;
+  border-color: #5c6bff;
+}
+
+.display {
+  background: #0c0c14;
+  border-radius: 14px;
+  padding: 18px 16px;
+  margin-bottom: 14px;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.expression {
+  color: #6c6c8a;
+  font-size: 16px;
+  min-height: 20px;
+  text-align: right;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+.result {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.result.error {
+  color: #ff6b6b;
+  font-size: 24px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  padding: 16px 0;
+  font-size: 17px;
+  font-weight: 500;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.08s ease, filter 0.15s ease;
+}
+
+.btn:active {
+  transform: scale(0.94);
+}
+
+.btn.num {
+  background: #262638;
+}
+
+.btn.func {
+  background: #3a3a52;
+  color: #d0d0e6;
+}
+
+.btn.sci {
+  background: #1c1c2b;
+  color: #9c9cc4;
+  font-size: 14px;
+}
+
+.btn.op {
+  background: #5c6bff;
+}
+
+.btn.equals {
+  background: #ff9f43;
+  grid-column: span 2;
+}
+
+.btn.zero {
+  grid-column: span 1;
+}
+
+.btn:hover {
+  filter: brightness(1.15);
+}
+
+@media (max-width: 400px) {
+  .result { font-size: 28px; }
+  .btn { padding: 14px 0; font-size: 15px; }
+}
